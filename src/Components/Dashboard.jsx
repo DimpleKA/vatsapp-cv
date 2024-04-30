@@ -45,14 +45,14 @@ const Dashboard = () => {
         {/* Render Users component for each user */}
         {users.map(user => (
           <Link key={user.email} to={`/dashboard/${user.email}`}>
-            <Users email={user.email} name={user.name} />
+            <Users email={user.email} name={user.name} dpUrl={user.dpUrl} />
           </Link>
         ))}
       </div>
 
       {/* Pass the logged-in user details */}
       <div style={{ display: "none" }}>
-        <ChatPage LIE={loggedInemail} logS={logS} />
+        <ChatPage />
       </div>
 
       {/* Render Outlet for nested routes */}

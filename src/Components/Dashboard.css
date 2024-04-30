@@ -1,8 +1,39 @@
 .Dashboard{
     height: 100vh;
     width: 30vw;
-    background-color: red;
+    background-color: rgb(255, 255, 255);
 }
 .flexx{
     display: flex;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* resonsive starts */
+/* Regular styles for larger screens */
+
+/* Media query for smaller smartphone sizes */
+@media only screen and (max-width: 780px) {
+/* this is users list  */
+
+  .ChatPage-d{
+    display: none;
+  }
+  .Dashboard-d{
+    width: 100%;
+  }
+/* this is users list */
+
+/* the below is chatpage  */
+.ChatPage-c{
+    width: 100%;
+  }
+  .Dashboard-c{
+    display: none;
+  }
+  
+  }
+  

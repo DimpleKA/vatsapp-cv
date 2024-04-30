@@ -106,7 +106,7 @@ console.log(formData);
 
     return (
         <div className="Login">
-            <div className="Login-TopNav">Topnav</div>
+            <div className="Login-TopNav"></div>
             <div className="Login-MidNav">
                 <div className="Login-MidNav-LoginBox">
                     <div className="Login-MidNav-LoginBox-icon">
@@ -117,7 +117,7 @@ console.log(formData);
                     <div className="Login-MidNav-LoginBox-Form">
                         <div className={showPasswordForm ? 'hide' : 'Email-OTP'}>
                             <form action="" className="Email" onSubmit={handleOtp}>
-                                <label htmlFor="otpEmail">Enter your college email</label><br />
+                                <label htmlFor="otpEmail">Enter your college email to register and chat!</label><br />
                                 <input
                                     type="email"
                                     id="otpEmail"
@@ -195,7 +195,7 @@ console.log(formData);
                     </div>
                 </div>
             </div>
-            <div className="Login-BotNav">Botnav</div>
+            <div className="Login-BotNav"></div>
         </div>
     );
 };

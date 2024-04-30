@@ -1,3 +1,12 @@
-.ChatPage{
-    width: 70vw;
-}
+
+
+/* Regular styles for smaller screens */
+
+/* Media query for screen sizes above a certain width */
+@media only screen and (min-width: 768px) {
+    .ChatPage-d{
+        width: 70vw;
+    }
+    /* Styles specific to screen sizes above 768px width go here */
+  }
+  

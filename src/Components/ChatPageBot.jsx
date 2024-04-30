@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout } from '../features/auth/authSlice';
 import './ChatPageBot.css';
 
 const ChatPageBot = (props) => {
-    const [loggedIn,setloggedIn]=useState(props.LIE);
-    const [logS,setlogS]=useState("");
-    console.log("chatbottom "+loggedIn);
+    const loggedInUser = useSelector((state) => state.auth.loggedInUser);
+    const isLoggedIn = useSelector((state) => state.auth.log);
+    console.log(loggedInUser+"redux email chat bot");
+    console.log(isLoggedIn+"redux login chat bot");
+   
+
     const selectedUser = props.email;
     const [message, setMessage] = useState("");
 
@@ -21,7 +26,7 @@ const ChatPageBot = (props) => {
     const sendMessage = () => {
         // Construct the message object with fromEmail, toEmail, and message
         const messageData = {
-            fromEmail: loggedIn,
+            fromEmail: loggedInUser,
             toEmail: selectedUser,
             message: message
         };

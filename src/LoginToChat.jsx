@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout } from './features/auth/authSlice';
 import './Login.css';
 
 const LoginToChat = () => {
@@ -7,6 +9,12 @@ const LoginToChat = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+// redux
+const loggedInUser = useSelector((state) => state.auth.loggedInUser);
+const isLoggedIn = useSelector((state) => state.auth.log);
+const dispatch = useDispatch();
+// redux
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,7 +33,10 @@ const LoginToChat = () => {
       })
       .then(data => {
         if (data && data.message) {
-          
+              // Dispatch the login action with the user's email
+              dispatch(login({ email: data.email }));
+
+
           navigate("/dashboard", { state: { loggedInemail: data.email, logS:true } });
 
           // Redirect to another page, display a success message, etc.

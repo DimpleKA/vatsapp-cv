@@ -1,12 +1,19 @@
 import React, {useState} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout } from '../features/auth/authSlice';
 import './ChatPageTop.css'
 import Typing from './Typing';
 
 
 const ChatPageTop = (props) => {
-    const [loggedIn,setloggedIn]=useState(props.LIE);
+    const loggedInUser = useSelector((state) => state.auth.loggedInUser);
+    const isLoggedIn = useSelector((state) => state.auth.log);
+    console.log(loggedInUser+"redux email chat bot");
+    console.log(isLoggedIn+"redux login chat bot");
+
+    const [loggedIn,setloggedIn]=useState(loggedInUser);
     console.log("chat top "+loggedIn);
-    const [logS,setlogS]=useState("");
+    const [logS,setlogS]=useState(isLoggedIn);
     const typing=false;
   return (
     <div className='ChatPageTop'>

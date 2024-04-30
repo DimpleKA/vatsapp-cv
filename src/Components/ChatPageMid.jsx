@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout } from '../features/auth/authSlice';
 import './ChatPageMid.css';
 import Sent from './Sent';
 import Received from './Received';
 
 const ChatPageMid = (props) => {
+  const loggedInUser = useSelector((state) => state.auth.loggedInUser);
+  const isLoggedIn = useSelector((state) => state.auth.log);
+  console.log(loggedInUser+"redux email chat bot");
+  console.log(isLoggedIn+"redux login chat bot");
+
+
   const [messages, setMessages] = useState([]);
  
-  const [loggedIn,setloggedIn]=useState(props.LIE);
+  const [loggedIn,setloggedIn]=useState(loggedInUser);
   console.log("chat mid "+loggedIn);
-  const [logS,setlogS]=useState("");
+  const [logS,setlogS]=useState(isLoggedIn);
   const selectedUser = props.email;
   useEffect(() => {
     const fetchMessages = async () => {

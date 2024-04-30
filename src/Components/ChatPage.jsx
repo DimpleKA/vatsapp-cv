@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout } from '../features/auth/authSlice';
 import './ChatPage.css';
 import ChatPageTop from './ChatPageTop';
 import ChatPageMid from './ChatPageMid';
 import ChatPageBot from './ChatPageBot';
 
 const ChatPage = (props) => {
+  const loggedInUser = useSelector((state) => state.auth.loggedInUser);
+  const isLoggedIn = useSelector((state) => state.auth.log);
+  console.log(loggedInUser+"redux email");
+  console.log(isLoggedIn+"redux login");
   const { user } = useParams();
   const [userData, setUserData] = useState(null); // State to store user data
 
@@ -43,24 +49,21 @@ const ChatPage = (props) => {
             username={userData.name} 
             dpUrl={userData.dpUrl} 
             email={userData.email} 
-            LIE={props.LIE} // Pass loggedInemail as prop
-            logStatus={props.logS}    // Pass logS as prop
+           
           />
           {/* Pass props to ChatPageMid */}
           <ChatPageMid 
             username={userData.name} 
             dpUrl={userData.dpUrL} 
             email={userData.email} 
-            LIE={props.LIE} // Pass loggedInemail as prop
-            logStatus={props.logS}    // Pass logS as prop
+      
           />
           {/* Pass props to ChatPageBot */}
           <ChatPageBot 
             username={userData.name} 
             dpUrl={userData.dpUrl} 
             email={userData.email} 
-            LIE={props.LIE} // Pass loggedInemail as prop
-            logStatus={props.logS}    // Pass logS as prop
+          
           />
         </>
       )}

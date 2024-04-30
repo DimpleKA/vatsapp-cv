@@ -1,0 +1,92 @@
+.Login{
+    height: 100vh;
+    background: white;
+}
+.Login-TopNav{
+    background: #044c44;
+    height: 5vh;
+
+}
+/* /////////////////////////////////////////////////////////////////////////////// */
+.Login-MidNav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+
+}
+.Login-MidNav-LoginBox{
+
+}
+.Vatsapp-locked{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.Login-MidNav-LoginBox-Form{
+    padding: 20px;
+    height:fit-content;
+    width: 300px;
+    background: gainsboro;
+    border-radius: 15px;
+}
+.Login-MidNav-LoginBox-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Login-MidNav-LoginBox-icon svg{
+    color: #4fc4b6;
+    font-size: 50px;
+}
+.Vatsapp-locked{
+    color: #1e2426;
+    font-size: 20px;
+    font-weight: 600;
+}
+.hide{
+display: none;
+}
+select{
+    height: 40px;
+    width: 95%;
+    border-radius: 10px;
+    margin: 20px;
+
+}
+input{
+    font-size: 18px;
+    color: green;
+    margin: 10px;
+    height: 30px;
+    width: 95%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+input:hover{
+    font-size: 18px;
+    border-bottom:2px solid green ;
+    color: black;
+}
+button{
+    font-size: 18px;
+    background: green;
+    color: WHITE;
+    height: 40px;
+    width: 190px;
+    border-radius: 20px;
+}
+#registerEmail{
+    background: rgb(202, 202, 202);
+    font-size: 18px;
+    color: green;
+    border-bottom:none ;
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+.Login-BotNav{
+    background: #044c44;
+    height: 5vh;
+}

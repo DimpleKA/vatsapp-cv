@@ -1,0 +1,20 @@
+.ChatPageBot{
+    display: flex;
+    height: 8vh;
+    background: #f0f2f5;
+}
+#message-box{
+    width: 70%;
+    height: 12%;
+    border-radius: 5px;
+    height: 15px;
+}
+#message-box:hover{
+    border-bottom: 1px solid white;
+}
+.type-message{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}

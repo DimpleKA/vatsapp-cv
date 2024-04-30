@@ -1,0 +1,15 @@
+.ChatPageTop{
+    display: flex;
+    height: 8vh;
+    background: #f0f2f5;
+}
+.ChatPageTop-dp img{
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.ChatPageTop-name{
+    font-size: large;
+}

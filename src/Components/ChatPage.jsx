@@ -40,7 +40,7 @@ const ChatPage = (props) => {
   }, [user]); // Dependency array ensures the effect runs when 'user' changes
 
   return (
-    <div className='ChatPage'>
+    <div className='ChatPage-d'>
       {/* Render components based on user data */}
       {userData && (
         <>

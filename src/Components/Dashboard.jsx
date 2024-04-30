@@ -41,7 +41,7 @@ const Dashboard = () => {
 
   return (
     <div className='flexx'>
-      <div className='Dashboard'>
+      <div className='Dashboard-d'>
         {/* Render Users component for each user */}
         {users.map(user => (
           <Link key={user.email} to={`/dashboard/${user.email}`}>

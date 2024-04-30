@@ -21,7 +21,7 @@ const ChatPageMid = (props) => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/messages/conversation/${loggedIn}/${selectedUser}`);
+        const response = await fetch(`https://vatsapp-backend.onrender.com/api/messages/conversation/${loggedIn}/${selectedUser}`);
         if (response.ok) {
           const data = await response.json();
           setMessages(data); // Update state with fetched messages

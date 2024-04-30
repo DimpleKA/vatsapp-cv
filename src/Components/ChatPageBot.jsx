@@ -32,7 +32,7 @@ const ChatPageBot = (props) => {
         };
 
         // Here you can perform your fetch API call to send the message
-        fetch('http://localhost:3000/api/messages/send', {
+        fetch('https://vatsapp-backend.onrender.com/api/messages/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

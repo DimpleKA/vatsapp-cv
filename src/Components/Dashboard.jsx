@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import './Dashboard.css';
 import Users from './Users';
@@ -23,7 +24,7 @@ const Dashboard = () => {
 
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/users');
+        const response = await fetch('https://vatsapp-backend.onrender.com/api/users');
         if (response.ok) {
           const data = await response.json();
           setUsers(data);

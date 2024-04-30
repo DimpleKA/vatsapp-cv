@@ -26,7 +26,7 @@ const Login = () => {
 
         try {
             // Make a POST request to your server
-            const response = await fetch('http://localhost:3000/api/register', {
+            const response = await fetch('https://vatsapp-backend.onrender.com/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ console.log(formData);
 
             // Make a POST request to the second URL
             
-            const response = await fetch('http://localhost:3000/api/register/verifyOTP', {
+            const response = await fetch('https://vatsapp-backend.onrender.com/api/register/verifyOTP', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

@@ -19,7 +19,7 @@ const ChatPage = (props) => {
     // Fetch user data when the component mounts
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/users/${user}`); // Replace with your backend API endpoint
+        const response = await fetch(`https://vatsapp-backend.onrender.com/api/users/${user}`); // Replace with your backend API endpoint
         if (response.ok) {
           const data = await response.json();
           setUserData(data); // Update user data state

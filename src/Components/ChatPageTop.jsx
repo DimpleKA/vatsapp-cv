@@ -1,17 +1,21 @@
 import React, {useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from '../features/auth/authSlice';
+import { useDispatch,useSelector } from 'react-redux';
+import {setDashCSS, setChatCSS } from '../features/responsive/responsiveSlice'
 import './ChatPageTop.css'
 import Typing from './Typing';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
 const ChatPageTop = (props) => {
     const loggedInUser = useSelector((state) => state.auth.loggedInUser);
     const isLoggedIn = useSelector((state) => state.auth.log);
 
+  const dispatch = useDispatch();
 
     const goBack=(e)=>{
-        hide .Chat
+ dispatch(setDashCSS('Dashboard-d'));
+dispatch(setChatCSS('ChatPage-d'));
     }
 
     const [loggedIn,setloggedIn]=useState(loggedInUser);
@@ -36,8 +40,11 @@ const ChatPageTop = (props) => {
         </div>
 
         <div className='ChatPageTop-Icons'>
-            <h4>Logged IN User:{loggedIn}</h4>
-            <div onClick={goBack}></div>
+            {/* <h4>Logged IN User:{loggedIn}</h4> */}
+
+            <div className='goback' onClick={goBack}>
+            <ArrowBackIcon/>
+            </div>
         </div>
 
     </div>

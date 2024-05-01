@@ -8,11 +8,13 @@ import Typing from './Typing';
 const ChatPageTop = (props) => {
     const loggedInUser = useSelector((state) => state.auth.loggedInUser);
     const isLoggedIn = useSelector((state) => state.auth.log);
-    console.log(loggedInUser+"redux email chat bot");
-    console.log(isLoggedIn+"redux login chat bot");
+
+
+    const goBack=(e)=>{
+        hide .Chat
+    }
 
     const [loggedIn,setloggedIn]=useState(loggedInUser);
-    console.log("chat top "+loggedIn);
     const [logS,setlogS]=useState(isLoggedIn);
     const typing=false;
   return (
@@ -35,6 +37,7 @@ const ChatPageTop = (props) => {
 
         <div className='ChatPageTop-Icons'>
             <h4>Logged IN User:{loggedIn}</h4>
+            <div onClick={goBack}></div>
         </div>
 
     </div>

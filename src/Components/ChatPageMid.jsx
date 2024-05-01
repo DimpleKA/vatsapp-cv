@@ -8,14 +8,13 @@ import Received from './Received';
 const ChatPageMid = (props) => {
   const loggedInUser = useSelector((state) => state.auth.loggedInUser);
   const isLoggedIn = useSelector((state) => state.auth.log);
-  console.log(loggedInUser+"redux email chat bot");
-  console.log(isLoggedIn+"redux login chat bot");
+
 
 
   const [messages, setMessages] = useState([]);
  
   const [loggedIn,setloggedIn]=useState(loggedInUser);
-  console.log("chat mid "+loggedIn);
+ 
   const [logS,setlogS]=useState(isLoggedIn);
   const selectedUser = props.email;
   useEffect(() => {
@@ -35,7 +34,6 @@ const ChatPageMid = (props) => {
 
     fetchMessages();
   }, [loggedIn, selectedUser]);
-console.log(messages);
   return (
     <div className='ChatPageMid'>
       {/* Render Sent and Received components based on fetched messages */}

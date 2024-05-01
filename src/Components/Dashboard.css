@@ -1,4 +1,6 @@
-.Dashboard{
+/* minimum width ka matlab hai ki bade ke liye ek certain point tk */
+@media only screen and (min-width: 780px) {
+.Dashboard-d{
     height: 100vh;
     width: 30vw;
     background-color: rgb(255, 255, 255);
@@ -6,11 +8,18 @@
 .flexx{
     display: flex;
 }
-
-a{
-    text-decoration: none;
-    color: black;
+.ChatPage-c{
+  width: 70vw;
 }
+.Dashboard-c{
+  width: 30vw;
+}
+
+}
+
+
+
+
 
 /* resonsive starts */
 /* Regular styles for larger screens */
@@ -22,8 +31,8 @@ a{
   .ChatPage-d{
     display: none;
   }
-  .Dashboard-d{
-    width: 100%;
+  .Dashboard-d{ 
+    width: 100%;  
   }
 /* this is users list */
 
@@ -37,3 +46,8 @@ a{
   
   }
   
+
+  a{
+    text-decoration: none;
+    color: black;
+}

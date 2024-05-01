@@ -8,12 +8,13 @@ import ChatPageMid from './ChatPageMid';
 import ChatPageBot from './ChatPageBot';
 
 const ChatPage = (props) => {
+  const dashCSS = useSelector((state) => state.responsive.chatCSS);
   const loggedInUser = useSelector((state) => state.auth.loggedInUser);
   const isLoggedIn = useSelector((state) => state.auth.log);
-  console.log(loggedInUser+"redux email");
-  console.log(isLoggedIn+"redux login");
   const { user } = useParams();
   const [userData, setUserData] = useState(null); // State to store user data
+
+
 
   useEffect(() => {
     // Fetch user data when the component mounts
@@ -40,7 +41,7 @@ const ChatPage = (props) => {
   }, [user]); // Dependency array ensures the effect runs when 'user' changes
 
   return (
-    <div className='ChatPage-d'>
+    <div className={dashCSS}>
       {/* Render components based on user data */}
       {userData && (
         <>

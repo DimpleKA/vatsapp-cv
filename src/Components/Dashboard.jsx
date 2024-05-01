@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
-
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import { useDispatch,useSelector } from 'react-redux';
+import {setDashCSS, setChatCSS } from '../features/responsive/responsiveSlice'
 import './Dashboard.css';
 import Users from './Users';
 import ChatPage from './ChatPage';
 
+
 const Dashboard = () => {
-  const [loggedInemail, setLoggedInemail] = useState('');
-  const [logS, setLogS] = useState(false);
+  const [loggedInemail, setLoggedInemail] = useState(''); // normal state
+  const [logS, setLogS] = useState(false); // normal logs
   const [users, setUsers] = useState([]);
   const location = useLocation();
+  // const dispatch = useDispatch();
 
+  const dashCSS = useSelector((state) => state.responsive.dashCSS);
+  
+  const dispatch = useDispatch();
+
+
+
+
+  
   useEffect(() => {
     let loggedInemailFromLocation = '';
     let logSFromLocation = false;
-    if (location.state) {
-      const { loggedInemail: loggedInemailFromLocation, logS: logSFromLocation } = location.state;
-      setLoggedInemail(loggedInemailFromLocation);
-      setLogS(logSFromLocation);
-    }
-    console.log(loggedInemail + "the email");
-    console.log(logS + "status of log");
 
+    // from backend fetching users
     const fetchUsers = async () => {
       try {
         const response = await fetch('https://vatsapp-backend.onrender.com/api/users');
@@ -39,15 +44,27 @@ const Dashboard = () => {
     fetchUsers();
   }, []);
 
+  const handleClick = () => {
+      // when clicked set setDash to Dashboard-c and setChat to ChatPage-c
+      dispatch(setDashCSS('Dashboard-c'));
+      dispatch(setChatCSS('ChatPage-c'));
+  };
+
   return (
     <div className='flexx'>
-      <div className='Dashboard-d'>
+      <div className={dashCSS}>
+        
         {/* Render Users component for each user */}
         {users.map(user => (
           <Link key={user.email} to={`/dashboard/${user.email}`}>
-            <Users email={user.email} name={user.name} dpUrl={user.dpUrl} />
+            <div onClick={handleClick}>
+              <Users email={user.email} name={user.name} dpUrl={user.dpUrl} />
+             
+            </div>
           </Link>
         ))}
+
+      
       </div>
 
       {/* Pass the logged-in user details */}

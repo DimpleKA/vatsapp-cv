@@ -6,8 +6,7 @@ import './ChatPageBot.css';
 const ChatPageBot = (props) => {
     const loggedInUser = useSelector((state) => state.auth.loggedInUser);
     const isLoggedIn = useSelector((state) => state.auth.log);
-    console.log(loggedInUser+"redux email chat bot");
-    console.log(isLoggedIn+"redux login chat bot");
+   
    
 
     const selectedUser = props.email;
